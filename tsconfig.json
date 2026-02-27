@@ -1,0 +1,72 @@
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "baseUrl": ".", // 恢复这个
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+      "@/lib/*": [
+        "./src/lib/*"
+      ],
+      "@/components/*": [
+        "./src/components/*"
+      ],
+      "@/store/*": [
+        "./src/stores/*"
+      ],
+      "@/locales/*": [
+        "./src/locales/*"
+      ],
+      "@/hooks/*": [
+        "./src/hooks/*"
+      ],
+      "@/pages/*": [
+        "./src/pages/*"
+      ],
+      "@/types/*": [
+        "./src/types/*"
+      ],
+      "@/utils/*": [
+        "./src/utils/*"
+      ],
+      "@/config/*": [
+        "./src/config/*"
+      ],
+      "@/constants/*": [
+        "./src/constants/*"
+      ]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
