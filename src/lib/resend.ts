@@ -1,10 +1,17 @@
 import { Resend } from "resend";
 
-if (!process.env.RESEND_API_KEY) {
-  throw new Error("RESEND_API_KEY is not set");
-}
+let resendClient: Resend | null = null;
 
-export const resend = new Resend(process.env.RESEND_API_KEY);
+function getResendClient(): Resend {
+  if (!resendClient) {
+    const apiKey = process.env.RESEND_API_KEY;
+    if (!apiKey) {
+      throw new Error("RESEND_API_KEY is not set");
+    }
+    resendClient = new Resend(apiKey);
+  }
+  return resendClient;
+}
 
 /**
  * 获取发件人邮箱地址
@@ -78,6 +85,7 @@ async function sendEmail({
   subject: string;
   html: string;
 }) {
+  const resend = getResendClient();
   const fromEmail = getFromEmail();
   const recipients = Array.isArray(to) ? to : [to];
 

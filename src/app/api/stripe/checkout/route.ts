@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { auth } from "@/lib/auth";
-import { stripe, getPricingPlan, PRICING_PLANS } from "@/lib/stripe";
+import { getStripeClient, getPricingPlan, PRICING_PLANS } from "@/lib/stripe";
 import { createClient } from "@/lib/supabase/server";
 import { createAdminClient } from "@/lib/supabase/admin";
 
@@ -10,6 +10,8 @@ import { createAdminClient } from "@/lib/supabase/admin";
  */
 export async function POST(request: NextRequest) {
   try {
+    const stripe = getStripeClient();
+
     // 检查用户认证
     const session = await auth();
     if (!session?.user) {

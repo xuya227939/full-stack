@@ -2,7 +2,6 @@ import type { CSSProperties } from "react";
 import Link from "next/link";
 import { Check, Crown, Gift, Clock, Star, X } from "lucide-react";
 import { getText, type Locale } from "@/lib/i18n";
-import { ReferralCard } from "@/components/ReferralCard";
 import ProPlanCardClient from "@/components/pricing/ProPlanCardClient";
 import EarlyPlanActions from "@/components/pricing/EarlyPlanActions";
 import PricingClientEffects from "@/components/pricing/PricingClientEffects";
@@ -426,15 +425,6 @@ export function Index({
           </div>
         </div>
       </section>
-
-      {/* Referral Section */}
-      {showReferral && (
-        <section className="py-12 sm:py-16 md:py-20">
-          <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-            <ReferralCard />
-          </div>
-        </section>
-      )}
 
       {/* FAQ Section */}
       <section className="py-12 sm:py-16 md:py-20">

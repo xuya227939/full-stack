@@ -1,13 +1,24 @@
 import Stripe from "stripe";
 
-if (!process.env.STRIPE_SECRET_KEY) {
-  throw new Error("STRIPE_SECRET_KEY is not set");
+let stripeClient: Stripe | null = null;
+
+function getStripeSecretKey(): string {
+  const key = process.env.STRIPE_SECRET_KEY;
+  if (!key) {
+    throw new Error("STRIPE_SECRET_KEY is not set");
+  }
+  return key;
 }
 
-export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
-  apiVersion: "2025-12-15.clover",
-  typescript: true,
-});
+export function getStripeClient(): Stripe {
+  if (!stripeClient) {
+    stripeClient = new Stripe(getStripeSecretKey(), {
+      apiVersion: "2025-12-15.clover",
+      typescript: true,
+    });
+  }
+  return stripeClient;
+}
 
 // 价格配置
 export const PRICING_PLANS = {

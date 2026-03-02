@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev:turbopack": "next dev --turbopack",
-    "dev": "next dev",
+    "dev": "next dev --webpack",
     "build": "next build",
     "build:test": "cross-env NODE_ENV=test APP_ENV=test next build",
     "build:prod": "cross-env NODE_ENV=production APP_ENV=production next build",

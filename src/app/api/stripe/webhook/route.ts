@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { stripe } from "@/lib/stripe";
+import { getStripeClient } from "@/lib/stripe";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { sendPaymentReceiptEmail } from "@/lib/resend";
 import Stripe from "stripe";
@@ -27,6 +27,8 @@ function getSubscriptionPeriod(subscription: Stripe.Subscription): {
  */
 export async function POST(request: NextRequest) {
   try {
+    const stripe = getStripeClient();
+
     // 获取原始 body 作为 Buffer（Stripe 签名验证需要原始字节）
     const bodyBuffer = await request.arrayBuffer();
     const body = Buffer.from(bodyBuffer);
@@ -64,7 +66,7 @@ export async function POST(request: NextRequest) {
     switch (event.type) {
       case "checkout.session.completed": {
         const session = event.data.object as Stripe.Checkout.Session;
-        await handleCheckoutCompleted(session, supabase);
+        await handleCheckoutCompleted(session, supabase, stripe);
         break;
       }
 
@@ -112,6 +114,7 @@ export async function POST(request: NextRequest) {
 async function handleCheckoutCompleted(
   session: Stripe.Checkout.Session,
   supabase: ReturnType<typeof createAdminClient>,
+  stripe: Stripe,
 ) {
   // 幂等性检查：防止重复处理同一个 session
   const { data: existingSubscription } = await supabase
