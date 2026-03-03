@@ -24,6 +24,10 @@ Language: [English](./README.md) | **中文**
 
 ![出海挣美金 课程](images/case_3.png)
 
+**[Meshivo 3D](https://meshivo.com/)** — AI 驱动的 3D 建模平台。将文字描述转化为高质量 3D 模型，支持智能材质、一键优化及多格式导出，适用于游戏资产、产品展示与 3D 打印。
+
+![Meshivo 3D 首页](images/case_4.png)
+
 ## 1. 运行环境
 
 - Node.js `>= 20.9`

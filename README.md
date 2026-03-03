@@ -24,6 +24,10 @@ A full-stack project based on Next.js 16 + React 19, including:
 
 ![出海挣美金 Course](images/case_3.png)
 
+**[Meshivo 3D](https://meshivo.com/)** — AI-powered 3D modeling platform. Convert text descriptions into high-quality 3D models with smart materials, one-click optimization, and multi-format export for game assets, product mockups, and 3D printing.
+
+![Meshivo 3D Homepage](images/case_4.png)
+
 ## 1. Requirements
 
 - Node.js `>= 20.9`
