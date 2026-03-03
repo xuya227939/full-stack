@@ -10,6 +10,20 @@ Language: [English](./README.md) | **中文**
 - 邮件发送（Resend）
 - 任务清理脚本
 
+## 网站案例
+
+**[SnapVee](https://snapvee.com)** — 通用社媒内容 AI 解析器。从 YouTube、TikTok、Instagram 等 50+ 平台提取、下载并转换内容，具备企业级精度。
+
+![SnapVee 首页](images/case_1.png)
+
+**[SkillHub](https://skillforge.cc/)** — Claude Skills 与 GPT Skills 市场。发现精选优质技能模板，从写作到编程，一站式提升工作效率。
+
+![SkillHub 首页](images/case_2.png)
+
+**[出海挣美金](https://course.jchencode.com/)** — 从零打造被动收入英文网站的实战课程。系统化学习路径，涵盖 SEO、变现与 AI 内容生产。
+
+![出海挣美金 课程](images/case_3.png)
+
 ## 1. 运行环境
 
 - Node.js `>= 20.9`

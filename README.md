@@ -3,11 +3,26 @@
 Language: **English (default)** | [中文](./README.zh-CN.md)
 
 A full-stack project based on Next.js 16 + React 19, including:
+
 - Web frontend and API routes
 - Auth and Supabase integration
 - Stripe / Alipay payment flows
 - Email sending (Resend)
 - Cleanup scripts
+
+## Website Case
+
+**[SnapVee](https://snapvee.com)** — Universal Social Media Content AI Parser. Extract, download, and transform content from YouTube, TikTok, Instagram, and 50+ platforms with enterprise-grade precision.
+
+![SnapVee Homepage](images/case_1.png)
+
+**[SkillHub](https://skillforge.cc/)** — Claude Skills & GPT Skills Marketplace. Discover curated premium skills to supercharge your workflow, from writing to coding. Battle-tested prompt templates for any task.
+
+![SkillHub Homepage](images/case_2.png)
+
+**[出海挣美金](https://course.jchencode.com/)** — A practical course for building passive income English websites from zero. Systematized learning path covering SEO, monetization, and AI-powered content production.
+
+![出海挣美金 Course](images/case_3.png)
 
 ## 1. Requirements
 
@@ -29,6 +44,7 @@ bun run dev
 ```
 
 Then open:
+
 - `http://localhost:3000`
 
 ## 3. Required Environment Variables (Minimum)
@@ -50,6 +66,7 @@ NEXTAUTH_URL=http://localhost:3000
 ```
 
 Optional by feature:
+
 - Stripe: `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`, `STRIPE_PRICE_ID_*`
 - Alipay: `ALIPAY_*`
 - Email: `RESEND_API_KEY`, `SMTP_USER`, `SMTP_HOST`
@@ -84,11 +101,13 @@ bun run start:prod
 ## 5. Env Loading Order
 
 From `scripts/load-env.js`:
+
 - Development: `.env.local` -> `.env.development` -> `.env`
 - Test: `.env.test` -> `.env`
 - Production: `.env.production` -> `.env`
 
 Notes:
+
 - System env vars have highest priority and are not overridden.
 - Defaults are applied when missing: `NODE_ENV`, `APP_ENV`.
 
@@ -105,6 +124,7 @@ Notes:
 ### 1) `localhost` returns 500
 
 Check missing env vars first, usually:
+
 - Supabase keys not configured
 - Payment env vars missing while payment code path is triggered
 
