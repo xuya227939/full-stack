@@ -85,45 +85,6 @@ export default async function RootLayout({
             }}
           ></Script>
 
-          {/* Microsoft Clarity 脚本 - 延迟加载 */}
-          <Script
-            id="clarity-script"
-            strategy="lazyOnload"
-            dangerouslySetInnerHTML={{
-              __html: `
-                (function (c, l, a, r, i, t, y) {
-                    c[a] =
-                        c[a] ||
-                        function () {
-                            (c[a].q = c[a].q || []).push(arguments);
-                        };
-                t = l.createElement(r);
-                t.async = 1;
-                t.src = 'https://www.clarity.ms/tag/' + i;
-                y = l.getElementsByTagName(r)[0];
-                y.parentNode.insertBefore(t, y);
-              })(window, document, 'clarity', 'script', 's6j33jmsyd');
-             `,
-            }}
-          />
-          {/* Google Analytics - afterInteractive 确保 gtag 在 CookieConsent 执行时可用 */}
-          <Script
-            src="https://www.googletagmanager.com/gtag/js?id=G-SXTKY0GWZ7"
-            strategy="afterInteractive"
-          />
-          <Script
-            id="gtag-init"
-            strategy="afterInteractive"
-            dangerouslySetInnerHTML={{
-              __html: `
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-SXTKY0GWZ7');
-  `,
-            }}
-          />
-
           {/* 结构化数据 */}
           <WebSiteSchema />
           <OrganizationSchema />
