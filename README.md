@@ -9,6 +9,10 @@ A full-stack project based on Next.js 16 + React 19, including:
 - Stripe / Alipay payment flows
 - Email sending (Resend)
 - Cleanup scripts
+- Supabase, R2 storage, Redis support
+- SEO optimization
+- Blog and content
+- Multi-language (i18n)
 
 ## Website Case
 

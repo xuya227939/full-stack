@@ -9,6 +9,10 @@ Language: [English](./README.md) | **中文**
 - Stripe / 支付宝支付链路
 - 邮件发送（Resend）
 - 任务清理脚本
+- Supabase、R2 存储、Redis 等支持
+- SEO 优化
+- 博客内容
+- 多语言处理
 
 ## 网站案例
 
