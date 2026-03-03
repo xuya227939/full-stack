@@ -1,8 +1,11 @@
 # full-stack 食用指南
 
+[点击访问](https://github.com/xuya227939/full-stack)
+
 Language: [English](./README.md) | **中文**
 
 一个基于 Next.js 16 + React 19 的全栈项目，包含：
+
 - Web 前端与 API 路由
 - 用户认证与 Supabase 数据访问
 - Stripe / 支付宝支付链路
@@ -29,6 +32,7 @@ bun run dev
 ```
 
 启动后访问：
+
 - `http://localhost:3000`
 
 ## 3. 必备环境变量（建议先补齐）
@@ -50,6 +54,7 @@ NEXTAUTH_URL=http://localhost:3000
 ```
 
 按需再补：
+
 - Stripe：`STRIPE_SECRET_KEY`、`STRIPE_WEBHOOK_SECRET`、`STRIPE_PRICE_ID_*`
 - 支付宝：`ALIPAY_*`
 - 邮件：`RESEND_API_KEY`、`SMTP_USER`、`SMTP_HOST`
@@ -84,11 +89,13 @@ bun run start:prod
 ## 5. 环境变量加载规则
 
 `scripts/load-env.js` 中的加载顺序如下（后加载优先）：
+
 - 开发环境：`.env.local` -> `.env.development` -> `.env`
 - 测试环境：`.env.test` -> `.env`
 - 生产环境：`.env.production` -> `.env`
 
 另外：
+
 - 系统环境变量优先级最高（不会被 `.env*` 覆盖）
 - 若未显式设置，会补默认：`NODE_ENV`、`APP_ENV`
 
